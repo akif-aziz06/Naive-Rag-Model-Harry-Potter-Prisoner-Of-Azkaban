@@ -91,5 +91,3 @@ streamlit run VECTOR-BD/generation.py
 
 ## ⚠️ Note
 Please ensure you do not commit your `.env` file to public repositories to keep your API keys secure.
-"# Naive-Rag-Model-Harry-Potter-Prisoner-Of-Azkaban" 
-"# Naive-Rag-Model-Harry-Potter-Prisoner-Of-Azkaban" 
