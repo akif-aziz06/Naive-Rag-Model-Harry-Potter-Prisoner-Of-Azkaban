@@ -17,7 +17,10 @@ def ingest_document(file_path):
 
     print("Initializing Persistent ChromaDB and storing chunks...")
     # Critical Change: Using PersistentClient to save the database to disk
-    chroma_client = chromadb.PersistentClient(path="./chroma_db_storage")
+    import os
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    db_path = os.path.join(base_dir, "chroma_db_storage")
+    chroma_client = chromadb.PersistentClient(path=db_path)
     collection = chroma_client.get_or_create_collection(name="harry_potter_rag")
 
     chunk_ids = [f"chunk_{i}" for i in range(len(chunks))]

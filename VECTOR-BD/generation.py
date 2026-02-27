@@ -12,7 +12,9 @@ st.title("⚡ Prisoner of Azkaban RAG Explorer")
 # We use @st.cache_resource so Streamlit doesn't reconnect to the database on every click
 @st.cache_resource
 def init_db():
-    chroma_client = chromadb.PersistentClient(path="./chroma_db_storage")
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    db_path = os.path.join(base_dir, "chroma_db_storage")
+    chroma_client = chromadb.PersistentClient(path=db_path)
     return chroma_client.get_collection(name="harry_potter_rag")
 
 collection = init_db()
