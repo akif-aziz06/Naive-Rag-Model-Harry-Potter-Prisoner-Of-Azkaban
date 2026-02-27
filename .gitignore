@@ -11,7 +11,7 @@ venv/
 ENV/
 
 # Databases
-chroma_db_storage/
+# chroma_db_storage/ (Commented out so it gets pushed to GitHub for Streamlit Cloud)
 
 # IDEs
 .vscode/
